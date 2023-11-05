@@ -1,0 +1,83 @@
+  "repository": "https://github.com/TheCaduceus/FileStreamBot",
+{
+  "version": 1,
+  "config": {
+    "TELEGRAM_API_ID": {
+      "type": "string",
+      "required": true,
+      "description": "The Telegram API ID."
+    },
+    "TELEGRAM_API_HASH": {
+      "type": "string",
+      "required": true,
+      "description": "The Telegram API hash."
+    },
+    "OWNER_ID": {
+      "type": "integer",
+      "required": true,
+      "description": "The ID of the Telegram user who owns the bot."
+    },
+    "ALLOWED_USER_IDS": {
+      "type": "array",
+      "required": false,
+      "description": "A list of Telegram user IDs who are allowed to use the bot.",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "TELEGRAM_BOT_USERNAME": {
+      "type": "string",
+      "required": true,
+      "description": "The username of the Telegram bot."
+    },
+    "TELEGRAM_BOT_TOKEN": {
+      "type": "string",
+      "required": true,
+      "description": "The Telegram bot token."
+    },
+    "TELEGRAM_CHANNEL_ID": {
+      "type": "integer",
+      "required": false,
+      "description": "The ID of the Telegram channel where the bot will send messages.",
+    },
+    "BOT_WORKERS": {
+      "type": "integer",
+      "required": false,
+      "description": "The number of worker processes to start for the bot.",
+      "default": 10
+    },
+    "SECRET_CODE_LENGTH": {
+      "type": "integer",
+      "required": false,
+      "description": "The length of the secret codes that the bot will generate.",
+      "default": 12
+    },
+    "BASE_URL": {
+      "type": "string",
+      "required": false,
+      "description": "The base URL of the bot's server.",
+      "default": "http://127.0.0.1:8080"
+    },
+    "BIND_ADDRESS": {
+      "type": "string",
+      "required": false,
+      "description": "The address that the bot's server will bind to.",
+      "default": "0.0.0.0"
+    },
+    "PORT": {
+      "type": "integer",
+      "required": false,
+      "description": "The port that the bot's server will listen on.",
+      "default": 8080
+    },
+      "buildpacks": [{
+      "url": "heroku/python"
+    }],
+  "formation": {
+      "web": {
+          "quantity": 1,
+          "size": "eco"
+      }
+  }
+}
+
